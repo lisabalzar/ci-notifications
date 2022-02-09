@@ -39,6 +39,7 @@ public class ContinuousIntegrationServer extends AbstractHandler
         response.setHeader("Accept", "application/vnd.github.v3+json");
         JSONObject test = new JSONObject();
         test.put("state", "success");
+        response.getWriter().println(test.toString());
         baseRequest.setHandled(true);
 
         JSONObject json = getJSON(request);
