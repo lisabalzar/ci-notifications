@@ -13,6 +13,7 @@ import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.Request;
 import org.eclipse.jetty.server.handler.AbstractHandler;
 
+import org.eclipse.jetty.util.ajax.JSON;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -35,6 +36,9 @@ public class ContinuousIntegrationServer extends AbstractHandler
     {
         response.setContentType("text/html;charset=utf-8");
         response.setStatus(HttpServletResponse.SC_OK);
+        response.setHeader("Accept", "application/vnd.github.v3+json");
+        JSONObject test = new JSONObject();
+        test.put("state", "success");
         baseRequest.setHandled(true);
 
         JSONObject json = getJSON(request);
