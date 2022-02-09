@@ -12,12 +12,9 @@ plugins {
     id "application"
 }
 
-ext {
-   javaMainClass = "ContinuousIntegrationServer"
-}
 
 application {
-    mainClassName = 'ContinuousIntegrationServer'
+    mainClass.set("ContinuousIntegrationServer")
 }
 
 repositories {
@@ -37,5 +34,11 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
     implementation 'javax.servlet:servlet-api:2.5'
     implementation 'org.eclipse.jetty.aggregate:jetty-all:7.0.2.v20100331'
+    testImplementation "org.mockito:mockito-core:3.+"
+    implementation 'org.slf4j:slf4j-api:1.7.35'
+    implementation 'org.slf4j:slf4j-simple:1.7.35'
+    implementation 'com.googlecode.json-simple:json-simple:1.1.1'
 }
+
+
 
