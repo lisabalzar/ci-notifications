@@ -42,6 +42,9 @@ public class ContinuousIntegrationServer extends AbstractHandler
         response.getWriter().println(test.toString());
         baseRequest.setHandled(true);
 
+
+
+
         JSONObject json = getJSON(request);
         if (request.getMethod() == "POST") {
             String event = request.getHeader("X-GitHub-Event");
