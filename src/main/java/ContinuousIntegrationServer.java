@@ -34,14 +34,13 @@ public class ContinuousIntegrationServer extends AbstractHandler
                        HttpServletResponse response)
             throws IOException, ServletException
     {
-        response.setContentType("text/html;charset=utf-8");
+        response.setContentType("application/json");
         response.setStatus(HttpServletResponse.SC_OK);
         response.setHeader("Accept", "application/vnd.github.v3+json");
         JSONObject test = new JSONObject();
         test.put("state", "success");
         response.getWriter().println(test.toString());
         baseRequest.setHandled(true);
-
 
         JSONObject json = getJSON(request);
         if (request.getMethod() == "POST") {
