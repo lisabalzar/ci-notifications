@@ -50,24 +50,11 @@ public class CIServerTest {
      * @throws IOException throws IOException
      */
     @Test
-    public void processCallTest() throws IOException {
+    public void processCallTest() throws IOException, InterruptedException {
         ContinuousIntegrationServer CI = new ContinuousIntegrationServer();
         String expected = "processCall works";
-        String actual = CI.processCall("echo " + expected);
+        String actual = CI.processCall("echo " + expected, "");
         assertEquals(expected, actual);
-    }
-
-    /**
-     * Tests so that the cloneRepo function successfully clones the repo
-     * @throws IOException throws IOException
-     */
-    @Test
-    public void cloneRepoTest() throws IOException {
-        ContinuousIntegrationServer CI = new ContinuousIntegrationServer();
-        CI.cloneRepo("main");
-        String repo = CI.processCall("ls -la ./CI-Server");
-        assertTrue(repo.contains("README"));
-        CI.processCall("rm -rf CI-Server");
     }
 
 }
