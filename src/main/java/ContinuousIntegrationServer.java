@@ -265,5 +265,8 @@ public class ContinuousIntegrationServer extends AbstractHandler
         out.write("<br><br> <b>Test output:<br>" + testOutput);
         out.close();
 
+
+
+
     }
 }
