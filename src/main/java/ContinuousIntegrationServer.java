@@ -21,7 +21,6 @@ import org.json.simple.parser.ParseException;
 
 import java.io.FileReader;
 
-
 /**
  Skeleton of a ContinuousIntegrationServer which acts as webhook
  See the Jetty documentation for API documentation of those classes.
